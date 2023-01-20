@@ -20,5 +20,5 @@ public class UserAuth {
     private String fullname;
     private String userEmail;
     private String userPhoneNo;
-
+    private String password;
 }

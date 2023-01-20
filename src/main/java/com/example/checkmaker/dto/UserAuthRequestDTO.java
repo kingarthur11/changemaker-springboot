@@ -23,4 +23,5 @@ public class UserAuthRequestDTO {
     @Size(min = 3, max = 30, message = "Invalid phone number: must be of 3 - 30 characters")
     String userPhoneNo;
     String username;
+    String password;
 }

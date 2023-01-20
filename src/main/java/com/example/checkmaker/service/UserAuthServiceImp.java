@@ -4,6 +4,7 @@ import com.example.checkmaker.dto.UserAuthRequestDTO;
 import com.example.checkmaker.model.UserAuth;
 import com.example.checkmaker.repository.UserAuthRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +14,8 @@ import java.util.Objects;
 public class UserAuthServiceImp implements UserAuthService {
 
     @Autowired
+    PasswordEncoder encoder;
+    @Autowired
     private UserAuthRepository userAuthRepository;
     @Override
     public UserAuth saveUser(UserAuthRequestDTO userAuthRequestDTO) {
@@ -21,6 +24,7 @@ public class UserAuthServiceImp implements UserAuthService {
                 .userPhoneNo(userAuthRequestDTO.getUserPhoneNo())
                 .fullname(userAuthRequestDTO.getFullname())
                 .username(userAuthRequestDTO.getUsername())
+                .password(encoder.encode(userAuthRequestDTO.getPassword()))
                 .build();
 //        UserAuth userAuth = UserAuth.builder().
         return userAuthRepository.save(userAuth);
