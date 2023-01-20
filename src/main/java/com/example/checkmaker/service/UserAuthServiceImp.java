@@ -66,13 +66,13 @@ public class UserAuthServiceImp implements UserAuthService {
 //		return userAuthRepository.save(userAuth);
 //    }
 ////
-//    @Override
-//    public UserAuth getUserByName(String userName) {
-//        return userAuthRepository.findUserAuthByUsername(userName);
-//    }
-//
-//    @Override
-//    public UserAuth getUserByEmail(String userEmail) {
-//        return userAuthRepository.findByUserEmail(userEmail);
-//    }
+    @Override
+    public UserAuth getUserByName(String username) {
+        return userAuthRepository.findUserAuthByUsername(username);
+    }
+
+    @Override
+    public UserAuth getUserByEmail(String userEmail) {
+        return userAuthRepository.findByUserEmail(userEmail);
+    }
 }

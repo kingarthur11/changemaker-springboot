@@ -22,7 +22,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
     JwtUtil jwtUtil;
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-//        final String authorisationHeader = request.getHeader(HttpHeaders.);
+
         String authorisationHeader = request.getHeader("Authorization");
         if (authorisationHeader == null || authorisationHeader.isEmpty() || !authorisationHeader.startsWith("Bearer")) {
             filterChain.doFilter(request, response);

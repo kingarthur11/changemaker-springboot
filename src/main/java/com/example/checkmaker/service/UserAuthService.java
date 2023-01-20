@@ -17,7 +17,7 @@ public interface UserAuthService {
 //
 //    public UserAuth updateUser(Integer id, UserAuth userAuth);
 //
-//    public UserAuth getUserByName(String userName);
-//
-//    public UserAuth getUserByEmail(String userEmail);
+    public UserAuth getUserByName(String username);
+
+    public UserAuth getUserByEmail(String userEmail);
 }
